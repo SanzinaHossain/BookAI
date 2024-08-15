@@ -5,6 +5,8 @@ export default function PricingTable({ pricingData }) {
   return (
     <div className={PricingTableStyle.container}>
       <table className={PricingTableStyle.tableStyle}>
+        {/* Table Head Content */}
+
         <thead className={PricingTableStyle.tableHeadStyle}>
           <tr className={PricingTableStyle.tableHeadRowStyle}>
             {TableHead.map((data, index) => (
@@ -14,6 +16,9 @@ export default function PricingTable({ pricingData }) {
             ))}
           </tr>
         </thead>
+
+        {/* Table Body Content */}
+
         <tbody className={PricingTableStyle.tableBodyStyle}>
           {pricingData.map((item, index) => (
             <tr
