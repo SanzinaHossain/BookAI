@@ -23,7 +23,7 @@ export default function PricingTable({ pricingData }) {
           {pricingData.map((item, index) => (
             <tr
               key={index}
-              className={`border-b border-[#334155] ${
+              className={`dark:border-borderColor border-light_borderColor ${
                 index === pricingData.length - 1 ? "" : "border-b"
               }`}
             >
