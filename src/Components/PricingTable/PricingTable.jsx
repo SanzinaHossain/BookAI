@@ -1,4 +1,4 @@
-export default function PricingTable({ data }) {
+export default function PricingTable({ pricingData }) {
   return (
     <div className="rounded-lg  border border-[#334155] text-[#e2e8f0] inter-title w-[100%]">
       <table className="w-full text-left">
@@ -10,11 +10,11 @@ export default function PricingTable({ data }) {
           </tr>
         </thead>
         <tbody className="inter-title p-5">
-          {data.map((item, index) => (
+          {pricingData.map((item, index) => (
             <tr
               key={index}
               className={`border-b border-[#334155] ${
-                index === data.length - 1 ? "" : "border-b"
+                index === pricingData.length - 1 ? "" : "border-b"
               }`}
             >
               <td className="p-4">{item.api}</td>

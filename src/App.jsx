@@ -4,6 +4,10 @@
 //section-bg-[#1e293b]
 //border-color-[#334155]
 import "./App.css"
+import { pricingData } from "./Components/PricingTable/PricingData"
+import PricingTable from "./Components/PricingTable/PricingTable"
+import TextBlock from "./Components/TextBlock/TextBlock"
+
 export default function App() {
   return (
     <div>
@@ -19,60 +23,12 @@ export default function App() {
             Our API pricing is based on the model used and the number of tokens
             processed.Here a breakdown of the costs:
           </p>
-          <div className="rounded-lg  border border-[#334155] text-[#e2e8f0] inter-title max-w-[100vw]">
-            <table className="w-full text-left ">
-              <thead className="bg-[#6366f1] text-sm text-white">
-                <tr>
-                  <th className="p-4">API</th>
-                  <th className="p-4">MODEL</th>
-                  <th className="p-4">PRICE PER 1K TOKENS</th>
-                </tr>
-              </thead>
-              <tbody className="inter-title p-5">
-                <tr className="border-b border-[#334155]">
-                  <td className="p-4">OpenAI</td>
-                  <td className="p-4">GPT-3.5</td>
-                  <td className="p-4">$0.002</td>
-                </tr>
-                <tr className="border-b border-[#334155]">
-                  <td className="p-4">OpenAI</td>
-                  <td className="p-4">GPT-4</td>
-                  <td className="p-4">$0.03</td>
-                </tr>
-                <tr className="border-b border-[#334155]">
-                  <td className="p-4">Together AI</td>
-                  <td className="p-4">Llama-2-70b</td>
-                  <td className="p-4">$0.0008</td>
-                </tr>
-                <tr>
-                  <td className="p-4">Together AI</td>
-                  <td className="p-4">Llama-2-13b</td>
-                  <td className="p-4">$0.0006</td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
 
-          <div className="mt-8">
-            <h3 className="text-xl font-semibold mb-2 text-[#a5b4fc]">
-              Token Estimation
-            </h3>
-            <p className="mb-4 inter-title">
-              On average, 1 token is approximately 4 characters or 0.75 words.
-              For precise pricing, we recommend using our token calculator tool.
-            </p>
-          </div>
+          {/* pricing table content  */}
+          <PricingTable pricingData={pricingData} />
 
-          <div className="mt-8">
-            <h3 className="text-xl font-semibold mb-2 text-[#a5b4fc] ">
-              Billing
-            </h3>
-            <p className="inter-title">
-              You will only be charged for the tokens used in generating the
-              book. The API tracks token usage and bills accordingly. Detailed
-              usage reports are available in your account dashboard.
-            </p>
-          </div>
+          {/* Pricing - Token Estimation and Billing Section */}
+          <TextBlock />
         </div>
       </div>
     </div>
