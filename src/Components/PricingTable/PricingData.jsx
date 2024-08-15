@@ -4,3 +4,15 @@ export const pricingData = [
   { api: "Together AI", model: "Llama-2-70b", price: "$0.0008" },
   { api: "Together AI", model: "Llama-2-13b", price: "$0.0006" },
 ]
+
+export const TableHead = [
+  {
+    headTitle: "API",
+  },
+  {
+    headTitle: "MODEL",
+  },
+  {
+    headTitle: "PRICE PER 1K TOKENS",
+  },
+]

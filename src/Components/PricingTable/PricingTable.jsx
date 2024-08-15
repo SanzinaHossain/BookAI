@@ -1,15 +1,20 @@
+import { TableHead } from "./PricingData"
+import { PricingTableStyle } from "./PricingTableStyle"
+
 export default function PricingTable({ pricingData }) {
   return (
-    <div className="rounded-lg border border-[#334155] text-[#e2e8f0] inter-title w-full overflow-x-auto">
-      <table className="w-full text-left">
-        <thead className="bg-[#6366f1] text-sm text-white rounded-t-lg">
-          <tr className="rounded-t-lg">
-            <th className="p-4">API</th>
-            <th className="p-4">MODEL</th>
-            <th className="p-4">PRICE PER 1K TOKENS</th>
+    <div className={PricingTableStyle.container}>
+      <table className={PricingTableStyle.tableStyle}>
+        <thead className={PricingTableStyle.tableHeadStyle}>
+          <tr className={PricingTableStyle.tableHeadRowStyle}>
+            {TableHead.map((data, index) => (
+              <th key={index} className={PricingTableStyle.tableDataStyle}>
+                {data.headTitle}
+              </th>
+            ))}
           </tr>
         </thead>
-        <tbody className="inter-title p-5">
+        <tbody className={PricingTableStyle.tableBodyStyle}>
           {pricingData.map((item, index) => (
             <tr
               key={index}
@@ -17,9 +22,9 @@ export default function PricingTable({ pricingData }) {
                 index === pricingData.length - 1 ? "" : "border-b"
               }`}
             >
-              <td className="p-4">{item.api}</td>
-              <td className="p-4">{item.model}</td>
-              <td className="p-4">{item.price}</td>
+              <td className={PricingTableStyle.tableDataStyle}>{item.api}</td>
+              <td className={PricingTableStyle.tableDataStyle}>{item.model}</td>
+              <td className={PricingTableStyle.tableDataStyle}>{item.price}</td>
             </tr>
           ))}
         </tbody>

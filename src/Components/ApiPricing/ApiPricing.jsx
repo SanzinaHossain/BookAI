@@ -1,12 +1,11 @@
 import { apiPricingData } from "./ApiPricingData"
+import { ApiPricingStyle } from "./ApiPricingStyle"
 
 export default function ApiPricing() {
   return (
     <>
-      <h2 className="text-2xl font-bold mb-4 text-[#a5b4fc]">
-        {apiPricingData.title}
-      </h2>
-      <p className="mb-4 ">{apiPricingData.text}</p>
+      <h2 className={ApiPricingStyle.titleStyle}>{apiPricingData.title}</h2>
+      <p className={ApiPricingStyle.textStyle}>{apiPricingData.text}</p>
     </>
   )
 }
